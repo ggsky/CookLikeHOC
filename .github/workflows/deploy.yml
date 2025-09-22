@@ -12,10 +12,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
+
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write  # to authenticate with Cloudflare
+      pages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
 
@@ -25,12 +25,9 @@ jobs:
 
       - name: Upload static files as artifact
         id: deployment
-        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .vitepress/dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        # with:
-        #   branch: gh-pages
-          # folder: docs/.vitepress/dist
