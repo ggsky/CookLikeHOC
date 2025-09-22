@@ -9,6 +9,7 @@ export default defineConfig({
   description: '像老乡鸡那样做饭',
   lastUpdated: true,
   cleanUrls: true,
+  base: '/CookLikeHOC/',
   themeConfig: {
     logo: '/logo.png',
     nav: [
